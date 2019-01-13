@@ -2,29 +2,32 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 
 hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 2px solid #dddddd;
+    border-top: 2px solid #80B0CB;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
+.navbar-custom {
+    background-color: #18467A;
+}
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.footer {
+    background-color: #EAEAF2;
+    margin: 0;
+    padding: 0;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-
+.footer-padding {
+    padding-top: 32px;
+    padding-bottom: 22px;
 }
