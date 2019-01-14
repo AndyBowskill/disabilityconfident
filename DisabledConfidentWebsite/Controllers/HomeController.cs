@@ -5,34 +5,33 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DisabledConfidentWebsite.Models;
+using DisabledConfidentWebsite.Repositories;
 
 namespace DisabledConfidentWebsite.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IEmployerRepository _employerRepository;
+
+        public HomeController(IEmployerRepository employerRepository)
+        {
+            _employerRepository = employerRepository;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        [HttpGet]
+        public Employer GetAll()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            return _employerRepository.GetAll();
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
 
-            return View();
-        }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
