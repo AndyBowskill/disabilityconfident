@@ -27,16 +27,14 @@ namespace DisabledConfidentWebsite.Repositories
             }
         }
 
-        public Employer GetAll()
+        public List<Employer> GetAll()
         {
             using (IDbConnection connection = Connection)
             {
                 string query = "SELECT Name FROM Employer";
                 connection.Open();
-                //var result = await connection.QueryAsync<Employer>(query);
-                
-                //return result.ToList();
-                return new Employer() { Name = "1 Less Worry Payroll Services Ltd" };
+                var result = connection.Query<Employer>(query);
+                return result.ToList();
             }
         }
     }

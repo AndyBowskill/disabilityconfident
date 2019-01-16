@@ -8,6 +8,6 @@ namespace DisabledConfidentWebsite.Repositories
 {
     public interface IEmployerRepository
     {
-        Employer GetAll();
+        List<Employer> GetAll();
     }
 }

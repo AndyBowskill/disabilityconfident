@@ -18,15 +18,18 @@ namespace DisabledConfidentWebsite.Controllers
             _employerRepository = employerRepository;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
 
+        [Route("")]
         [HttpGet]
-        public Employer GetAll()
+        public ActionResult Index()
         {
-            return _employerRepository.GetAll();
+            var model = _employerRepository.GetAll();
+
+            return View(model);
         }
 
 

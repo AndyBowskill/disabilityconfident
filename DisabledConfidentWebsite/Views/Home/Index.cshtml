@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<DisabledConfidentWebsite.Models.Employer>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,6 +7,10 @@
     <div class="col-xs-12">
         <h3>List Of Employers That Have Signed Up</h3>
         <hr />
+        @foreach (var employer in Model)
+        {
+            <p class="">@employer.Name</p>
+        }
     </div>
 
     <div class="col-xs-12">
