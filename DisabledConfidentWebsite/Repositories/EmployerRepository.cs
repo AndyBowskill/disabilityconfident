@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using DisabledConfidentWebsite.Models;
+using DisabledConfidentWebsite.ViewModels;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,18 @@ namespace DisabledConfidentWebsite.Repositories
         {
             using (IDbConnection connection = Connection)
             {
-                string query = "SELECT Name FROM Employer";
+                string query = $"SELECT Name, Place, DCLevel, Sector FROM Company";
+                connection.Open();
+                var result = connection.Query<Employer>(query);
+                return result.ToList();
+            }
+        }
+
+        public List<Employer> GetForSector(string sector)
+        {
+            using (IDbConnection connection = Connection)
+            {
+                string query = $"SELECT Name, Place, DCLevel, Sector FROM Company WHERE Sector = '{sector}'";
                 connection.Open();
                 var result = connection.Query<Employer>(query);
                 return result.ToList();

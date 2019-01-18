@@ -9,5 +9,7 @@ namespace DisabledConfidentWebsite.Repositories
     public interface IEmployerRepository
     {
         List<Employer> GetAll();
+        List<Employer> GetForSector(string sector);
+
     }
 }

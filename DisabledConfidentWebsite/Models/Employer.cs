@@ -7,6 +7,9 @@ namespace DisabledConfidentWebsite.Models
 {
     public class Employer
     {
-        public string Name { get; set; }
+        public string Name { get; }
+        public string Place { get; }
+        public string DCLevel { get; }
+        public string Sector { get; set; }
     }
 }

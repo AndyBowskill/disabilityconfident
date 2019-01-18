@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DisabledConfidentWebsite.Models;
 using DisabledConfidentWebsite.Repositories;
+using DisabledConfidentWebsite.ViewModels;
 
 namespace DisabledConfidentWebsite.Controllers
 {
@@ -18,21 +19,30 @@ namespace DisabledConfidentWebsite.Controllers
             _employerRepository = employerRepository;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         [Route("")]
         [HttpGet]
-        public ActionResult Index()
+        public IActionResult Index()
         {
-            var model = _employerRepository.GetAll();
+            var employersSector = new EmployerViewModel
+            {
+                Employers = _employerRepository.GetAll(),
+                Sector = ""
+            };
 
-            return View(model);
+            return View(employersSector);
         }
 
+        [HttpPost]
+        public IActionResult Index(string sector)
+        {
+            var employersSector = new EmployerViewModel
+            {
+                Employers = _employerRepository.GetForSector(sector),
+                Sector = sector
+            };
 
+            return View(employersSector);
+        }
 
 
 
