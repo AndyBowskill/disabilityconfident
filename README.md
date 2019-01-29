@@ -1,3 +1,3 @@
-# Disability Confident Website
+# Disability Confident
 
-Charts for UK disability confident employers website.
+The UK disability confident employers website.
