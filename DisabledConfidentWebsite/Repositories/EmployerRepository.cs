@@ -24,7 +24,7 @@ namespace DisabledConfidentWebsite.Repositories
         {
             get
             {
-                return new SqlConnection(_configuration.GetConnectionString("MyConnectionString"));
+                return new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             }
         }
 
@@ -32,7 +32,7 @@ namespace DisabledConfidentWebsite.Repositories
         {
             using (IDbConnection connection = Connection)
             {
-                string query = $"SELECT Name, Place, DCLevel, Sector FROM Company";
+                string query = $"SELECT TOP 10 Name, Place, DCLevel, Sector FROM Company";
                 connection.Open();
                 var result = connection.Query<Employer>(query);
                 return result.ToList();
@@ -43,7 +43,7 @@ namespace DisabledConfidentWebsite.Repositories
         {
             using (IDbConnection connection = Connection)
             {
-                string query = $"SELECT Name, Place, DCLevel, Sector FROM Company WHERE Sector = '{sector}'";
+                string query = $"SELECT TOP 10 Name, Place, DCLevel, Sector FROM Company WHERE Sector = '{sector}'";
                 connection.Open();
                 var result = connection.Query<Employer>(query);
                 return result.ToList();

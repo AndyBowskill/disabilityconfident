@@ -21,6 +21,11 @@ hr {
     background-color: #18467A;
 }
 
+.navbar-brand-custom {
+    font-family: 'Righteous', sans-serif;
+    color: #eeeeee;
+}
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;

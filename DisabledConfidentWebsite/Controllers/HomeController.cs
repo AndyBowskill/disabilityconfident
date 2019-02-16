@@ -19,17 +19,19 @@ namespace DisabledConfidentWebsite.Controllers
             _employerRepository = employerRepository;
         }
 
-        [Route("")]
-        [HttpGet]
+        //[Route("")]
+        //[HttpGet]
         public IActionResult Index()
         {
-            var employersSector = new EmployerViewModel
-            {
-                Employers = _employerRepository.GetAll(),
-                Sector = ""
-            };
+            //var employersSector = new EmployerViewModel
+            //{
+            //    Employers = _employerRepository.GetAll(),
+            //    Sector = ""
+            //};
 
-            return View(employersSector);
+            return View();
+
+            //return View(employersSector);
         }
 
         [HttpPost]
