@@ -20,25 +20,32 @@ namespace DisabledConfidentWebsite.Controllers
         // GET: Employers
         [Route("")]
         [HttpGet]
-        public async Task<IActionResult> Index(int? page, string currentFilter, string searchString)
+        public async Task<IActionResult> Index(int? page, string currentPlaceFilter, string searchPlace, string currentSectorFilter, string searchSector)
         {
-            if (searchString != null)
+            if (searchPlace != null || searchSector != null)
             {
                 page = 1;
             }
             else
             {
-                searchString = currentFilter;
+                searchPlace = currentPlaceFilter;
+                searchSector = currentSectorFilter;
             }
 
-            ViewData["currentFilter"] = searchString;
+            ViewData["currentPlaceFilter"] = searchPlace;
+            ViewData["currentSectorFilter"] = searchSector;
 
             var employers = from e in _context.Employers
                             select e;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchPlace))
             {
-                employers = employers.Where(e => e.Sector.Contains(searchString));
+                employers = employers.Where(e => e.Place.Contains(searchPlace));
+            }
+
+            if (!String.IsNullOrEmpty(searchSector))
+            {
+                employers = employers.Where(e => e.Sector.Contains(searchSector));
             }
 
             int pageSize = 10;

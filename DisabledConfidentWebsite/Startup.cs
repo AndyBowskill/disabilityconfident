@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DisabledConfidentWebsite.Data;
-using DisabledConfidentWebsite.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -40,8 +39,6 @@ namespace DisabledConfidentWebsite
             //            options.UseSqlite("Data Source=MvcMovie.db"));
             // Automatically perform database migration
             //services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
-
-            services.AddTransient<IEmployerRepository, EmployerRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
