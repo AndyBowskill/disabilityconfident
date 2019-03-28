@@ -5,51 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Disabled Confident Employers</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+
+    <header id="header" class="fixed-top">
         <div class="container">
-            <div class="navbar-header">
+
+            <div class="logo float-left">
                 <a asp-area="" asp-controller="Employers" asp-action="Index" class="navbar-brand navbar-brand-custom">Disabled Confident Employers</a>
             </div>
-        </div>
-    </nav>
 
-    <div class="container body-content">
+            @*<nav class="main-nav float-right d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="#intro">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>*@
+
+        </div>
+    </header>
+
+    <main>
         @RenderBody()
-    </div>
+    </main>
 
-    <footer class="footer">
-        <div class="container body-content footer-padding">
-            <p class="text-center">If you find this website useful, please buy me a coffee:</p>
-            <p class="text-center"><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/andybowskill"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a></p>
-            <p>This website's data is kindly from <a href="https://www.gov.uk/">www.gov.uk</a>.</p>
-            <p>Please feel free to contact me at <a href="https://www.andybowskill.co.uk/">www.andybowskill.co.uk</a>.</p>
-            <p>&copy; Copyright 2019 - Andy Bowskill</p>
+    <footer id="footer" class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <p class="text-center">If you find this website useful, please buy me a coffee:</p>
+                <p class="text-center"><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/andybowskill"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px"> Buy me a coffee</span></a></p>
+                <p>This website's data is kindly from <a href="https://www.gov.uk/">GOV.UK</a>.</p>
+                <p>Please feel free to contact me at <a href="https://www.andybowskill.co.uk/">Andy Bowskill</a>.</p>
+            </div>
         </div>
-    </footer>
+        
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright 2019 - Andy Bowskill  
+            </div>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> and <a href="https://www.andybowskill.co.uk/">Andy Bowskill</a>.
+            </div>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</footer>
 
-    <environment include="Development">
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/mobile-nav/mobile-nav.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    @RenderSection("Scripts", required: false)
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
+    <script src="js/site.js"></script>
+
 </body>
 </html>
