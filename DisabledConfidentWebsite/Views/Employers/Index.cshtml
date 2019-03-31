@@ -14,52 +14,51 @@
                 <form asp-action="Index" method="get">
                     <div class="form-actions no-color">
                         <p>Filter the results from the employer's town or city and the sector they work in. Please note that the filter is case-insensitive and part-words is allowed.</p>
-                        <p>
-                            Employee's Town or City: <input type="text" name="searchPlace" value="@ViewData["currentPlaceFilter"]" />
-                            Employee's Sector: <input type="text" name="searchSector" value="@ViewData["currentSectorFilter"]" />
-                            <input type="submit" value="Search" class="btn btn-secondary" /> |
-                            <a asp-action="Index">Back to Full List</a>
-                        </p>
+                        <p>Employee's Town or City: <input type="text" name="searchPlace" value="@ViewData["currentPlaceFilter"]" /></p>
+                        <p>Employee's Sector: <input type="text" name="searchSector" value="@ViewData["currentSectorFilter"]" /></p>
+                        <p><input type="submit" value="Search" class="btn btn-secondary" /> | <a asp-action="Index">Back to Full List</a></p>
                     </div>
                 </form>
 
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Town or City
-                            </th>
-                            <th>
-                                Sector
-                            </th>
-                            <th>
-                                DC Level
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead>
                             <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Place)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Sector)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.DCLevel)
-                                </td>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Town or City
+                                </th>
+                                <th>
+                                    Sector
+                                </th>
+                                <th>
+                                    DC Level
+                                </th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Place)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sector)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DCLevel)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
 
                 @{
                     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
@@ -67,23 +66,23 @@
                 }
 
                 <a asp-action="Index"
-                   asp-route-page="@(Model.PageIndex - 1)"
-                   asp-route-currentPlaceFilter="@ViewData["currentPlaceFilter"]"
-                   asp-route-currentSectorFilter="@ViewData["currentSectorFilter"]"
-                   class="btn btn-secondary @prevDisabled">
+                    asp-route-page="@(Model.PageIndex - 1)"
+                    asp-route-currentPlaceFilter="@ViewData["currentPlaceFilter"]"
+                    asp-route-currentSectorFilter="@ViewData["currentSectorFilter"]"
+                    class="btn btn-secondary @prevDisabled">
                     Previous
                 </a>
                 <a asp-action="Index"
-                   asp-route-page="@(Model.PageIndex + 1)"
-                   asp-route-currentPlaceFilter="@ViewData["currentPlaceFilter"]"
-                   asp-route-currentSectorFilter="@ViewData["currentSectorFilter"]"
-                   class="btn btn-secondary @nextDisabled">
+                    asp-route-page="@(Model.PageIndex + 1)"
+                    asp-route-currentPlaceFilter="@ViewData["currentPlaceFilter"]"
+                    asp-route-currentSectorFilter="@ViewData["currentSectorFilter"]"
+                    class="btn btn-secondary @nextDisabled">
                     Next
                 </a>
 
             </div>
 
-        </div>
+            </div>
     </div>
 </section>
 
