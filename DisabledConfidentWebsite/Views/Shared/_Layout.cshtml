@@ -3,14 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Disabled Confident</title>
+    <title>Disability Confident</title>
 
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Montserrat:300,400,500,700" rel="stylesheet">
 
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/original-style.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/original-style.css" />
+        <link rel="stylesheet" href="~/css/style.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/original-style.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/style.min.css" asp-append-version="true" />
+    </environment>
 
 </head>
 <body>
@@ -19,7 +25,7 @@
         <div class="container">
 
             <div class="logo float-left">
-                <a asp-area="" asp-controller="Employers" asp-action="Index" class="navbar-brand navbar-brand-custom">Disabled Confident</a>
+                <a asp-area="" asp-controller="Employers" asp-action="Index" class="navbar-brand navbar-brand-custom">Disability Confident</a>
             </div>
 
             @*<nav class="main-nav float-right d-none d-lg-block">
