@@ -49,26 +49,8 @@ namespace DisabledConfidentWebsite.Controllers
             }
 
             int pageSize = 10;
+
             return View(await PaginatedList<Employer>.CreateAsync(employers.AsNoTracking(), page ?? 1, pageSize));
         }
-
-        // GET: Employers/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var employer = await _context.Employers
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (employer == null)
-            {
-                return NotFound();
-            }
-
-            return View(employer);
-        }
-
     }
 }

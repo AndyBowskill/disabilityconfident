@@ -1,5 +1,3 @@
-using System;
-
 namespace DisabledConfidentWebsite.Models
 {
     public class ErrorViewModel

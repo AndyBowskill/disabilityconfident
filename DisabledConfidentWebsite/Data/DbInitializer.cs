@@ -1,6 +1,4 @@
-﻿using DisabledConfidentWebsite.Data;
-using DisabledConfidentWebsite.Models;
-using System;
+﻿using DisabledConfidentWebsite.Models;
 using System.Linq;
 
 namespace DisabledConfidentWebsite.Data
