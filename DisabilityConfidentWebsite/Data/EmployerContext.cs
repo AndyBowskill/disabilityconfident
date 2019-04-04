@@ -1,7 +1,7 @@
-﻿using DisabledConfidentWebsite.Models;
+﻿using DisabilityConfidentWebsite.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DisabledConfidentWebsite.Data
+namespace DisabilityConfidentWebsite.Data
 {
     public class EmployerContext : DbContext
     {

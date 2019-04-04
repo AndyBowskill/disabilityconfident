@@ -1,7 +1,7 @@
-﻿using DisabledConfidentWebsite.Models;
+﻿using DisabilityConfidentWebsite.Models;
 using System.Linq;
 
-namespace DisabledConfidentWebsite.Data
+namespace DisabilityConfidentWebsite.Data
 {
     public static class DbInitializer
     {

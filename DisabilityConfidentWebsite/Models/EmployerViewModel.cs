@@ -1,8 +1,8 @@
-﻿using DisabledConfidentWebsite.Models;
+﻿using DisabilityConfidentWebsite.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 
-namespace DisabledConfidentWebsite.ViewModels
+namespace DisabilityConfidentWebsite.ViewModels
 {
     public class EmployerViewModel
     {

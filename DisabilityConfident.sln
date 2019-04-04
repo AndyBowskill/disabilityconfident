@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisabledConfidentWebsite", "DisabledConfidentWebsite\DisabledConfidentWebsite.csproj", "{AC6CC7B1-2142-46E5-BAC1-F1CA619E1BD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisabilityConfidentWebsite", "DisabilityConfidentWebsite\DisabilityConfidentWebsite.csproj", "{AC6CC7B1-2142-46E5-BAC1-F1CA619E1BD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

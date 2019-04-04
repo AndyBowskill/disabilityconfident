@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using DisabledConfidentWebsite.Data;
-using DisabledConfidentWebsite.Models;
+using DisabilityConfidentWebsite.Data;
+using DisabilityConfidentWebsite.Models;
 using System;
 
-namespace DisabledConfidentWebsite.Controllers
+namespace DisabilityConfidentWebsite.Controllers
 {
     public class EmployersController : Controller
     {

@@ -1,4 +1,4 @@
-﻿namespace DisabledConfidentWebsite.Models
+﻿namespace DisabilityConfidentWebsite.Models
 {
     public class Employer
     {
