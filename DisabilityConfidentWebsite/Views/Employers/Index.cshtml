@@ -34,27 +34,36 @@
                                     Sector
                                 </th>
                                 <th>
-                                    DC Level
+                                    Level
+                                </th>
+                                <th>
+                                    Website
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Name)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Place)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Sector)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.DCLevel)
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Place)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Sector)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DCLevel)
+                                </td>
+                                <td>
+                                    @{ 
+                                        var html = $"https://{item.Website}";
+                                    }
+                                    <a href=@html>@Html.DisplayFor(modelItem => item.Website)</a>
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>

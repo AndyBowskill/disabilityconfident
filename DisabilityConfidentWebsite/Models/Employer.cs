@@ -8,5 +8,6 @@
         public string Postcode { get; set; }
         public string DCLevel { get; set; }
         public string Sector { get; set; }
+        public string Website { get; set; }
     }
 }

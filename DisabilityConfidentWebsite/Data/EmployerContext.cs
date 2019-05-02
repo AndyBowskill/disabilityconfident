@@ -13,7 +13,7 @@ namespace DisabilityConfidentWebsite.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employer>().ToTable("Employer");
+            modelBuilder.Entity<Employer>().ToTable("EmployerTwo");
         }
     }
 }
