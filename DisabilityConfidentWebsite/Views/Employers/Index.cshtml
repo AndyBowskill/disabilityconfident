@@ -58,10 +58,25 @@
                                     @Html.DisplayFor(modelItem => item.DCLevel)
                                 </td>
                                 <td>
-                                    @{ 
-                                        var html = $"https://{item.Website}";
+                                    @{
+                                        var html = "";
+                                        if (item.Website == null)
+                                        {
+                                            <span>This company's website is not found.</span>
+                                        }
+                                        else
+                                        {
+                                            if (item.Website.Substring(0, 8) != "https://")
+                                            {
+                                                html = $"http://{item.Website}";
+                                            }
+                                            else
+                                            {
+                                                html = item.Website;
+                                            }
+                                            <a href=@html>@Html.DisplayFor(modelItem => item.Website)</a>
+                                        }
                                     }
-                                    <a href=@html>@Html.DisplayFor(modelItem => item.Website)</a>
                                 </td>
                             </tr>
                             }
